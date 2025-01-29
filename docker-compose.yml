@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  test-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: test-app:1.0.0
+    container_name: test-app-container
+    ports:
+      - "8087:8087"
+    environment:
+      JAVA_OPTS: "-Xmx512m -Xms256m"
+    restart: "no"
